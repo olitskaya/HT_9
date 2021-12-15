@@ -17,10 +17,10 @@ import sqlite3
 con = sqlite3.connect('atm.db')
 cur = con.cursor()
 cur.execute('''CREATE TABLE IF NOT EXISTS users
-               (id integer PRIMARY KEY, name text NOT NULL, password text NOT NULL, is_incassator bit DEFAULT False)''')
+               (id integer PRIMARY KEY, name text NOT NULL, password text NOT NULL, is_incassator bit DEFAULT false)''')
 cur.execute("INSERT INTO users VALUES ('1','user1','user1')")
 cur.execute("INSERT INTO users VALUES ('2','user2','user2')")
-cur.execute("INSERT INTO users VALUES ('3','admin','admin', True)")
+cur.execute("INSERT INTO users VALUES ('3','admin','admin', 'True')")
 con.commit()
 cur.execute('''CREATE TABLE IF NOT EXISTS balance
                (user_id integer NOT NULL, amount integer NOT NULL DEFAULT 0, FOREIGN KEY (user_id) REFERENCES users(id))''')

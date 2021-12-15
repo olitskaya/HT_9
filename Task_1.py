@@ -36,5 +36,5 @@ cur.execute("INSERT INTO banknotes VALUES ('4', '100', '0')")
 cur.execute("INSERT INTO banknotes VALUES ('5', '200', '0')")
 cur.execute("INSERT INTO banknotes VALUES ('6', '500', '0')")
 cur.execute("INSERT INTO banknotes VALUES ('7', '1000', '0')")
-
+con.commit()
 con.close()
